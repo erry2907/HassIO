@@ -1,0 +1,25 @@
+##
+## Main arguments, all optional
+##
+title: Rolluiken Panel
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+    namespace: default
+    devices:
+      media_player:
+        step: 5
+
+
+     
+layout:
+    - cover.woonkamer (2x1)
+    - cover.eetkamer (2x1), cover.eetkamer_2 (2x1)
+    - cover.achterdeur (2x1), cover.keuken (2x1)
+    - cover.slaapkamer (2x1), cover.kleine_kamer(2x1)
+    - cover.logeerkamer (2x1)

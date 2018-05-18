@@ -1,0 +1,125 @@
+#################################################################
+## Customize
+#################################################################
+    sensor.netatmo_woonkamer_temperature:
+      friendly_name: Temperature
+    sensor.netatmo_woonkamer_min_temp:
+      friendly_name: Minimum
+    sensor.netatmo_woonkamer_max_temp:
+      friendly_name: Maximum
+    sensor.netatmo_woonkamer_noise:
+      friendly_name: Noise
+    sensor.netatmo_woonkamer_pressure:
+      friendly_name: Pressure
+    sensor.netatmo_woonkamer_co2:
+      friendly_name: CO2
+    sensor.netatmo_woonkamer_humidity:
+      friendly_name: Humidity  
+    sensor.netatmo_woonkamer_wifi:
+      friendly_name: Wifi
+    sensor.netatmo_slaapkamer_temperature:
+      friendly_name: Temperature
+    sensor.netatmo_slaapkamer_humidity:
+      friendly_name: Humidity
+    sensor.netatmo_slaapkamer_co2:
+      friendly_name: CO2
+    sensor.netatmo_slaapkamer_battery:
+      friendly_name: Battery
+    sensor.netatmo_buiten_temperature:
+      friendly_name: Temperature
+    sensor.netatmo_buiten_humidity:
+      friendly_name: Humidity
+    sensor.netatmo_buiten_battery:
+      friendly_name: Battery
+    sensor.cpu_load_total:
+      friendly_name: CPU Load
+    sensor.memory_usage_real:
+      friendly_name: Memory Usage
+    sensor.network_up:
+      friendly_name: Upload Speed
+    sensor.network_down:
+      friendly_name: Download Speed
+    sensor.temperature_sda:
+      friendly_name: Temp Disk 1
+    sensor.temperature_sdb:
+      friendly_name: Temp Disk 2
+    sensor.volume_used_volume_1:
+      friendly_name: Used Space
+    device_tracker.iphone_van_erry:
+      friendly_name: Erwin
+      icon: mdi:human-male
+    device_tracker.iphone_van_stephanie:
+      friendly_name: Stephanie
+      icon: mdi:human-female
+#    device_tracker.apple_watchvanjjam:
+#      friendly_name: Watch Erwin
+#      icon: mdi:watch
+#    device_tracker.macbookprovanjjam:
+#      friendly_name: MacBook Erwin
+#      icon: mdi:laptop-mac
+#    device_tracker.macbookairvanstephanie:
+#      friendly_name: MacBook Air Stephanie
+#      icon: mdi:laptop-mac
+#    device_tracker.ipadvanstephanie:
+#      friendly_name: Ipad Stephanie
+#      icon: mdi:tablet-ipad
+#    sensor.dark_sky_summary:
+#      friendly_name: Summary
+#      #icon: mdi:tablet-ipad
+#    sensor.dark_sky_icon:
+#      friendly_name: Icon
+#      #icon: mdi:tablet-ipad
+#    sensor.dark_sky_temperature:
+#      friendly_name: Temperature
+#      #icon: mdi:tablet-ipad
+#    sensor.dark_sky_apparent_temperature:
+#      friendly_name: App. Temperature
+#      #icon: mdi:tablet-ipad
+#    sensor.dark_sky_daily_high_temperature:
+#      friendly_name: Maximum
+#      #icon: mdi:tablet-ipad
+#    sensor.dark_sky_daily_low_temperature:
+#      friendly_name: Minimum
+#      #icon: mdi:tablet-ipad
+#    sensor.dark_sky_dew_point:
+#      friendly_name: Dew point
+#      #icon: mdi:tablet-ipad
+#    sensor.dark_sky_wind_bearing:
+#      friendly_name: Wind bearing
+#      #icon: mdi:tablet-ipad
+#    sensor.dark_sky_wind_speed:
+#      friendly_name: Wind speed
+#      #icon: mdi:tablet-ipad
+    sensor.power_consumption:
+      friendly_name: Power
+      #icon: mdi:tablet-ipad
+    sensor.power_consumption_normal:
+      friendly_name: High rate
+      #icon: mdi:tablet-ipad
+    sensor.power_consumption_low:
+      friendly_name: Low rate
+      #icon: mdi:tablet-ipad
+    sensor.power_tariff:
+      friendly_name: Tariff
+      #icon: mdi:tablet-ipad
+    sensor.gas_consumption:
+      friendly_name: Gas
+      #icon: mdi:tablet-ipad
+    sensor.hourly_gas_consumption:
+      friendly_name: hourly Gas
+      #icon: mdi:tablet-ipad
+    sensor.power_production:
+      friendly_name: Power production
+      hidden: true
+      #icon: mdi:tablet-ipad
+    sensor.power_production_normal:
+      friendly_name: High rate production
+      hidden: true
+      #icon: mdi:tablet-ipad
+    sensor.power_production_low:
+      friendly_name: Low rate production
+      hidden: true
+      #icon: mdi:tablet-ipad
+    
+    
+    

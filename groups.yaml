@@ -1,0 +1,223 @@
+#################################################################
+## Groups
+#################################################################
+ Woonkamer:
+  name: Woonkamer
+  entities:
+  - light.sn1_led
+  - cover.woonkamer
+  - sensor.netatmo_woonkamer_temperature
+  - sensor.netatmo_woonkamer_max_temp
+  - sensor.netatmo_woonkamer_min_temp
+  - sensor.netatmo_woonkamer_noise
+  - sensor.netatmo_woonkamer_pressure
+  - sensor.netatmo_woonkamer_co2
+  - sensor.netatmo_woonkamer_humidity  
+  - sensor.netatmo_woonkamer_wifi
+ 
+ Time:
+  name: Date&Time
+  entities:
+  - sensor.time
+  - sensor.date__time
+  - sensor.internet_time
+  - sensor.time_utc
+  - sun.sun
+  - sensor.moon
+
+ Slaapkamer:
+  name: Slaapkamer
+  entities:
+  - cover.slaapkamer
+  - sensor.netatmo_slaapkamer_temperature
+  - sensor.netatmo_slaapkamer_humidity
+  - sensor.netatmo_slaapkamer_co2
+  - sensor.netatmo_slaapkamer_battery
+
+ Overloop:
+  name: Overloop
+  entities:
+  - light.ln2_led
+  - input_number.lightnode2_speed
+ 
+ Buiten:
+  name: Buiten
+  entities:
+  - sensor.netatmo_buiten_temperature
+  - sensor.netatmo_buiten_humidity
+  - sensor.netatmo_buiten_battery
+  
+ Familie:
+  name: Familie
+  entities:
+  - device_tracker.iphone_van_erry
+  - sensor.iphone_van_erry_battery_level
+  - sensor.iphone_van_erry_battery_state
+  - device_tracker.iphone_van_stephanie
+  - sensor.iphone_van_stephanie_battery_level
+  - sensor.iphone_van_stephanie_battery_state
+  
+ NAS:
+  name: NAS
+  entities:
+  - sensor.cpu_load_total
+  - sensor.memory_usage_real
+  - sensor.network_up
+  - sensor.network_down
+  - sensor.temperature_sda
+  - sensor.temperature_sdb
+  - sensor.volume_used_volume_1
+
+ Travel:
+  name: Travel time
+  entities:
+  - sensor.etten_to_adam
+  - sensor.adam_to_etten
+  - sensor.etten_to_amphia
+  - sensor.amphia_to_etten
+  - sensor.amsteletten
+  - sensor.ettenamstel
+  
+ Slimme_meter:
+  name: Slimme meter
+  entities:
+  - sensor.power_consumption
+  - sensor.power_tariff
+  - sensor.power_consumption_normal
+  - sensor.power_consumption_low
+  - sensor.gas_consumption
+  - sensor.hourly_gas_consumption
+  - sensor.power_production
+  - sensor.power_production_normal
+  - sensor.power_production_low
+  - sensor.power_consumption_phase_l1
+  - sensor.power_consumption_phase_l2
+  - sensor.power_consumption_phase_l3
+  - sensor.power_production_phase_l1
+  - sensor.power_production_phase_l2
+  - sensor.power_production_phase_l3
+  - sensor.long_power_failure_count
+  - sensor.voltage_sags_phase_l1
+  - sensor.voltage_sags_phase_l2
+  - sensor.voltage_sags_phase_l3
+  - sensor.voltage_swells_phase_l1
+  - sensor.voltage_swells_phase_l2
+  - sensor.voltage_swells_phase_l3
+  
+ Dark_sky:
+  name: Dark Sky
+  entities:
+  - sensor.dark_sky_icon
+  - sensor.dark_sky_apparent_temperature
+  - sensor.dark_sky_cloud_coverage
+  - sensor.dark_sky_daily_high_temperature
+  - sensor.dark_sky_daily_low_temperature
+  - sensor.dark_sky_daily_max_precip_intensity
+  - sensor.dark_sky_daily_summary
+  - sensor.dark_sky_dew_point
+  - sensor.dark_sky_hourly_summary
+  - sensor.dark_sky_humidity
+  - sensor.dark_sky_minutely_summary
+  - sensor.dark_sky_ozone
+  - sensor.dark_sky_precip
+  - sensor.dark_sky_precip_accumulation
+  - sensor.dark_sky_precip_intensity
+  - sensor.dark_sky_precip_probability
+  - sensor.dark_sky_pressure
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_uv_index
+  - sensor.dark_sky_visibility
+  - sensor.dark_sky_wind_bearing
+  - sensor.dark_sky_wind_speed
+  
+ Rolluiken_Eetkamer:
+  name: Rolluiken Eetkamer
+  entities:
+  - cover.eetkamer
+  - cover.eetkamer_2
+  
+  
+  
+#################################################################
+## Views
+#################################################################
+# default_view:
+#  view: yes
+#  entities:
+#  - group.woonkamer
+#  - group.familie
+#  - group.slaapkamer
+#  - group.overloop
+ 
+ Familie_view:
+  view: yes
+  name: Familie
+  entities:
+  - group.familie
+  - group.travel
+  
+ Power_view:
+  view: yes
+  name: Power
+  entities:
+  - group.Slimme_meter
+ 
+ Woonkamer_view:
+  view: yes
+  name: Woonkamer
+  entities:
+  - group.woonkamer
+#  - media_player.apple_tv
+  - light.sn1_led
+# Darksky_view:
+#  view: yes
+#  name: Darksky
+#  entities:
+#  - group.darksky
+ Slaapkamer_view:
+  view: yes
+  name: Slaapkamer
+  entities:
+  - group.slaapkamer
+ 
+ Buiten_view:
+  view: yes
+  name: Buiten
+  entities:
+  - group.buiten
+  
+ Rolluiken_view:
+  view: yes
+  name: Rolluiken
+  entities:
+  - cover.achterdeur
+  - cover.eetkamer
+  - cover.eetkamer_2
+  - cover.keuken
+  - cover.kleine_kamer
+  - cover.logeerkamer
+  - cover.slaapkamer
+  - cover.woonkamer
+
+ NAS_view:
+  view: yes
+  name: NAS
+  entities:
+  - group.nas
+  
+ Automation_view:
+  view: yes
+  name: Automation
+  entities:
+  - automation.zet_overloop_verlichting_aan_voor_zon_ondergang
+  - automation.zet_overloop_verlichting_uit_na_zon_opkomst
+  - automation.ln2_animation_speed_auto
+  - automation.turn_off_light_after_2230
+  - automation.turn_on_light_when_sun_sets
+  - automation.woonkamer_rolluik_dicht
+  - automation.woonkamer_rolluik_open
+  - automation.rolluiken_achter_dicht
+  - automation.rolluiken_achter_open
+  - automation.achterdeur_rolluiken_open
+  - automation.achterdeur_rolluiken_dicht

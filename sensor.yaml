@@ -1,0 +1,126 @@
+#################################################################
+## Sensor
+#################################################################
+# Moon phases
+  - platform: moon
+  
+#P1 meter
+  - platform: dsmr
+    port: /dev/ttyUSB0
+    dsmr_version: 2.2
+    
+# Forcast Darksky
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    monitored_conditions:
+      - summary
+      - precip_type
+      - precip_intensity
+      - precip_probability
+      - precip_accumulation
+      - temperature
+      - apparent_temperature
+      - dew_point
+      - wind_speed
+      - wind_bearing
+      - cloud_cover
+      - humidity
+      - pressure
+      - visibility
+      - ozone
+      - minutely_summary
+      - hourly_summary
+      - daily_summary
+      - temperature_max
+      - temperature_min
+      - precip_intensity_max
+      - uv_index
+      - icon
+
+#Netatmo Wheather station
+  - platform: netatmo
+    station: ErryStef
+    modules:
+      Woonkamer:
+        - temperature
+        - co2
+        - pressure
+        - noise
+        - humidity
+        - min_temp
+        - max_temp
+        - wifi_status
+      Buiten:
+        - temperature
+        - battery_vp
+        - humidity
+      Slaapkamer:
+        - temperature
+        - battery_vp
+        - humidity
+        - co2
+##Synology
+  - platform: synologydsm
+    host: 192.168.0.50
+    username: !secret nas_username
+    password: !secret nas_password
+    monitored_conditions:
+      - cpu_total_load
+      - memory_real_usage
+      - network_up
+      - network_down
+      - disk_temp
+      - volume_percentage_used
+#Date and time
+  - platform: time_date
+    display_options:
+      - 'date_time'
+      - 'time'
+      - 'beat'
+#NS
+  - platform: nederlandse_spoorwegen
+    email: !secret ns_username
+    password: !secret ns_password
+    routes:
+      - name: Etten-Amstel
+        from: Etn
+        to: Asa
+        via: Ht
+      - name: Amstel-Etten
+        from: Asa
+        to: Etn
+        via: Ht
+      
+#Google travel time
+## To home Erwin
+  - platform: google_travel_time
+    name: Adam To Etten
+    api_key: !secret google_travel_time_api_key
+    origin: Falckstraat 53, Amsterdam, Netherlands
+    destination: zone.home
+    options:
+      mode: transit
+## To Work Erwin
+  - platform: google_travel_time
+    name: Etten To Adam
+    api_key: !secret google_travel_time_api_key
+    origin: zone.home
+    destination: Falckstraat 53, Amsterdam, Netherlands
+    options:
+      mode: transit
+## To work Stephanie
+  - platform: google_travel_time
+    name: Etten To Amphia
+    api_key: !secret google_travel_time_api_key
+    origin: zone.home
+    destination: Molengracht 21, Breda, Netherlands
+    options:
+      mode: driving
+## To home Stephanie
+  - platform: google_travel_time
+    name: Amphia To Etten
+    api_key: !secret google_travel_time_api_key
+    origin: Molengracht 21, Breda, Netherlands
+    destination: zone.home
+    options:
+      mode: driving

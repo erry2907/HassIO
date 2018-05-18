@@ -1,0 +1,170 @@
+#################################################################
+## Automation
+#################################################################
+- alias: Turn on light when sun sets
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  action:
+    service: light.turn_on
+    entity_id: light.sn1_led
+
+- alias: Turn off light after 22:30
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: time
+    at: '22:30:00'
+  condition: 
+    condition: state
+    entity_id: input_boolean.visitors
+    state: 'off'
+  action:
+    service: light.turn_off
+    entity_id: light.sn1_led
+    
+- alias: Zet overloop verlichting aan voor zon ondergang
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  action:
+    service: light.turn_on
+    entity_id: light.ln2_led
+
+- alias: Zet overloop verlichting uit na zon opkomst
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '+00:30:00'
+  action:
+    service: light.turn_off
+    entity_id: light.ln2_led
+  
+- alias: LN2 Animation Speed auto
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: input_number.lightnode2_speed
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ESP01/lightnode2"
+      payload: '{"transition":{{ trigger.to_state.state | int }}}'
+      
+- alias: Woonkamer rolluik dicht 
+  initial_state: False
+  hide_entity: False
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '+00:30:00'
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.woonkamer
+        position: 0
+
+- alias: Woonkamer rolluik open
+  initial_state: False
+  hide_entity: False
+  trigger:
+    platform: time
+    at: '07:30:00'
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.woonkamer
+        position: 100
+
+- alias: Rolluiken achter dicht 
+  initial_state: False
+  hide_entity: False
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '+01:00:00'
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: group.rolluiken_eetkamer
+        position: 0
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.keuken
+        position: 0
+
+- alias: Rolluiken achter open
+  initial_state: False
+  hide_entity: False
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '+00:10:00'
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: group.rolluiken_eetkamer
+        position: 100
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.keuken
+        position: 100
+        
+- alias: Achterdeur rolluiken dicht 
+  initial_state: False
+  hide_entity: False
+  trigger:
+    platform: time
+    at: '23:30:00'
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.achterdeur
+        position: 0
+
+- alias: Achterdeur rolluiken open
+  initial_state: False
+  hide_entity: False
+  trigger:
+    platform: time
+    at: '05:45:00'
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.achterdeur
+        position: 100
+        
+- alias: 'HassIO Startup Notification'
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    service: notify.ios_iphone_van_erry
+    data:
+      message: "HassIO started"
+      data:
+        subtitle: "Subtitle goes here"
+        push:
+          sound: "US-EN-Morgan-Freeman-Good-Morning.wav"
+
+- alias: 'HassIO Shutdown Notification'
+  trigger:
+    - platform: homeassistant
+      event: shutdown
+  action:
+    service: notify.ios_iphone_van_erry
+    data:
+      message: "HassIO shutting down"
+      data:
+        subtitle: "Subtitle goes here"
+        push:
+          sound: "US-EN-Morgan-Freeman-Good-Night.wav"

@@ -1,0 +1,24 @@
+##
+## Main arguments, all optional
+##
+title: Home Panel
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+    namespace: default
+    devices:
+      media_player:
+        step: 5
+        
+layout:
+    - clock.clock (2x1), light.sn1_led, light.ln2_led
+    - sensor.netatmo_woonkamer_temperature, sensor.netatmo_woonkamer_pressure, sensor.netatmo_woonkamer_noise, sensor.netatmo_woonkamer_humidity, sensor.netatmo_woonkamer_co2
+    - sensor.netatmo_buiten_temperature
+    - sensor.power_consumption, sensor.power_tariff, sensor.power_consumption_normal, sensor.power_consumption_low
+    - device_tracker.iphone_van_erry, device_tracker.iphone_van_stephanie
+    

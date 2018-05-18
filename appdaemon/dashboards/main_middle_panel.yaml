@@ -1,0 +1,32 @@
+kastlamp:
+    widget_type: light
+    title: Kast Lamp
+    entity: light.sn1_led
+    icon_on: mdi-lamp
+    icon_off: mdi-lamp
+    on_attributes:
+      brightness: 255
+      color_temp: 276
+
+woonkamer_temperature:
+    widget_type: sensor
+    title: Woonkamer
+    precision: 1
+    entity: sensor.netatmo_woonkamer_temperature
+
+buiten_temperature:
+    widget_type: sensor
+    title: Buiten
+    precision: 1
+    entity: sensor.netatmo_buiten_temperature
+    
+slaapkamer_temperature:
+    widget_type: sensor
+    title: Slaapkamer
+    precision: 1
+    entity: sensor.netatmo_slaapkamer_temperature
+
+    
+layout:
+    - woonkamer_temperature, buiten_temperature, slaapkamer_temperature, upstairs_thermometer, downstairs_thermometer, basement_thermometer, light_level  
+    - kastlamp, scene.outside_off, scene.porch_on, scene.porch_off, input_boolean.night_outside_motion, input_boolean.guest, input_boolean.cooling, input_boolean.heating

@@ -1,0 +1,32 @@
+#################################################################
+## Zones
+#################################################################
+- name: Work Erwin
+  latitude: 52.360836
+  longitude: 4.897775
+  radius: 100
+  icon: mdi:glasses
+
+- name: Amphia Breda
+  latitude: 51.582046
+  longitude: 4.796793
+  radius: 500
+  icon: mdi:hospital-building
+
+- name: Etten-Leur Station
+  latitude: 51.575151
+  longitude: 4.636626
+  radius: 100
+  icon: mdi:train
+    
+- name: s'Hertogenbosch Station
+  latitude: 51.690554
+  longitude: 5.293537
+  radius: 200
+  icon: mdi:train
+  
+- name: Amstel Station
+  latitude: 52.346668
+  longitude: 4.918257
+  radius: 200
+  icon: mdi:train

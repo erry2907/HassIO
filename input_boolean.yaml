@@ -1,0 +1,9 @@
+##############################################################
+## Input Boolean  ##
+##############################################################
+
+#Visitors
+  visitors:
+    name: Bezoek
+    initial: off
+    icon: mdi:account-multiple

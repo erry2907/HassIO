@@ -1,0 +1,110 @@
+side_temperature:
+    widget_type: sensor
+    title: Temperature
+    units: "&deg;C"
+    precision: 0
+    entity: sensor.netatmo_buiten_temperature
+
+weather:
+    widget_type: weather
+    units: "&deg;F"
+    
+power_consumption:
+    widget_type: sensor
+    title: Power
+    precision: 2
+    shorten: 1
+    entity: sensor.power_consumption
+    sub_entity: sensor.power_tariff
+    
+side_humidity:
+    widget_type: gauge
+    title: Humidity
+    max: 100
+    min: 0
+    units: "%"
+    entity: sensor.netatmo_buiten_humidity
+
+erwin_presence:
+    widget_type: device_tracker
+    title: Erwin
+    device: iphone_van_erry
+    enable: 0
+    icon_on: fa-male
+    icon_off: fa-male
+    icon_style_active: "color: #4bcdea"
+
+stephanie_presence:
+    widget_type: device_tracker
+    title: Stephanie
+    device: iphone_van_stephanie
+    enable: 0
+    icon_on: fa-female
+    icon_off: fa-female
+    icon_style_active: "color: #ea4b82"
+
+
+mode:
+    widget_type: sensor
+    title: House Mode
+    text_style: "text-transform: uppercase;font-size: 300%"
+    entity: input_select.house_mode
+    sub_entity: sensor.dark_day
+    sub_entity_map:
+      0: ""
+      1: "dark"
+        
+porch_motion:
+    widget_type: binary_sensor
+    title: Porch
+    entity: binary_sensor.porch_multisensor_sensor
+
+garage:
+    widget_type: cover
+    title: Garage
+    entity: cover.garage_door
+    icon_on: fa-car
+    icon_off: fa-car
+    icon_style_active: $style_active_warn
+
+alarm:
+    widget_type: alarm
+    entity: alarm_control_panel.ha_alarm
+    title: Alarm
+    state_style: "font-size: 250%;"
+    title_style: "color: white"
+
+erwin_home_to_work:
+  widget_type: sensor
+  entity: sensor.etten_to_adam
+  title: Erwin
+  title2: Home to Work
+
+erwin_work_to_home:
+  widget_type: sensor
+  entity: sensor.adam_to_etten
+  title: Erwin
+  title2: Work to Home
+  
+stephanie_home_to_work:
+  widget_type: sensor
+  entity: sensor.etten_to_amphia
+  title: Stephanie
+  title2: Home to Work
+
+stephanie_work_to_home:
+  widget_type: sensor
+  entity: sensor.amphia_to_etten
+  title: Stephanie
+  title2: Work to Home
+  
+visitors:
+  widget_type: input_boolean
+  entity: input_boolean.visitors
+  title: Bezoek
+  icon_on: fa-users
+  icon_off: fa-users
+
+layout:
+    - clock.clock(2x1), weather(2x2), stephanie_presence, stephanie_home_to_work, stephanie_work_to_home, visitors
+    - power_consumption(2x1), erwin_presence, erwin_home_to_work, erwin_work_to_home

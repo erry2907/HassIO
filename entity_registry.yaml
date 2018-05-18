@@ -1,0 +1,16 @@
+sensor.iphone_van_erry_battery_level:
+  name:
+  platform: ios
+  unique_id: level_iphone_van_erry
+sensor.iphone_van_erry_battery_state:
+  name:
+  platform: ios
+  unique_id: state_iphone_van_erry
+sensor.iphone_van_stephanie_battery_level:
+  name:
+  platform: ios
+  unique_id: level_iphone_van_stephanie
+sensor.iphone_van_stephanie_battery_state:
+  name:
+  platform: ios
+  unique_id: state_iphone_van_stephanie
